@@ -1,19 +1,21 @@
 const path = require('path');
 
 module.exports = {
+  mode: 'development',
+  devtool: 'eval-source-map',
   entry: {
     bundle: './src/index.tsx',
   },
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
   },
   resolve: {
-    extensions: ['.ts', '.js', 'tsx', 'jsx'],
+    extensions: ['.ts', '.js', '.tsx'],
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'dist'),
+      directory: path.resolve(__dirname, 'dist'),
     },
     open: true,
   },
