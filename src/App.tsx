@@ -1,17 +1,20 @@
 // import React from 'react';
 // import './App.css';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Main from './components/Main';
+import { ChakraProvider } from '@chakra-ui/react';
+import { BrowserRouter } from 'react-router-dom';
+import { Router } from './router/Router';
+import theme from './theme/theme';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <Header />
-      <Main />
-      <Footer />
+      <ChakraProvider theme={theme}>
+        <BrowserRouter>
+          <Router />
+        </BrowserRouter>
+      </ChakraProvider>
     </div>
   );
-}
+};
 
 export default App;
