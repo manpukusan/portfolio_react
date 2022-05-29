@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import { Stack } from '@chakra-ui/react';
 import { Page404 } from '../components/pages/Page404';
 import { Home } from '../components/pages/Home';
 import { About } from '../components/pages/About';
@@ -13,7 +14,9 @@ export const Router = () => {
         index
         element={
           <HeaderLayout>
-            <Home />
+            <Stack minHeight="100vh">
+              <Home />
+            </Stack>
           </HeaderLayout>
         }
       />
@@ -21,7 +24,9 @@ export const Router = () => {
         path="about"
         element={
           <HeaderLayout>
-            <About />
+            <Stack minHeight="100vh">
+              <About />
+            </Stack>
           </HeaderLayout>
         }
       />
@@ -29,7 +34,9 @@ export const Router = () => {
         path="webwork"
         element={
           <HeaderLayout>
-            <WebWork />
+            <Stack minHeight="100vh">
+              <WebWork />
+            </Stack>
           </HeaderLayout>
         }
       />
@@ -37,7 +44,9 @@ export const Router = () => {
         path="desktopwork"
         element={
           <HeaderLayout>
-            <DesktopWork />
+            <Stack minHeight="100vh">
+              <DesktopWork />
+            </Stack>
           </HeaderLayout>
         }
       />
@@ -45,7 +54,9 @@ export const Router = () => {
         path="*"
         element={
           <HeaderLayout>
-            <Page404 />
+            <Stack minHeight="100vh">
+              <Page404 />
+            </Stack>
           </HeaderLayout>
         }
       />

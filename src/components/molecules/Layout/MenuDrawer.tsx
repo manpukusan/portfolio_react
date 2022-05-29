@@ -6,7 +6,7 @@ import {
   DrawerOverlay,
   VStack,
 } from '@chakra-ui/react';
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 
 type Props = {
   isOpen: boolean;
@@ -17,7 +17,7 @@ type Props = {
   onClickDesktopWork: () => void;
 };
 
-export const MenuDrawer: FC<Props> = (props) => {
+export const MenuDrawer: FC<Props> = memo((props) => {
   const {
     isOpen,
     onClose,
@@ -54,4 +54,4 @@ export const MenuDrawer: FC<Props> = (props) => {
       </DrawerOverlay>
     </Drawer>
   );
-};
+});

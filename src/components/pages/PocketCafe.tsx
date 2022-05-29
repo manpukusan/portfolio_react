@@ -1,5 +1,5 @@
-import { PocketTheme } from '../molecules/PocketTheme';
-import { PocketHeader } from '../molecules/PocketHeader';
+import { PocketTheme } from '../organisms/Pocket/PocketTheme';
+import { PocketHeader } from '../organisms/Pocket/PocketHeader';
 
 export const PocketCafe = () => {
   return (
