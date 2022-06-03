@@ -3,18 +3,17 @@ import React, { FC, memo, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 type Props = {
-  id: number;
+  id: string;
   term: string;
   description: string;
 };
 
 export const MedicalCard: FC<Props> = memo((props) => {
   const { id, term, description } = props;
-
   const navigate = useNavigate();
 
   const onClickCard = useCallback(() => {
-    navigate(`/webwork/pocket/${id}`);
+    navigate(`/webwork/${id}`);
   }, []);
 
   return (

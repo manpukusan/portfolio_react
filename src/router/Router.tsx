@@ -6,6 +6,8 @@ import { About } from '../components/pages/About';
 import { WebWork } from '../components/pages/WebWork';
 import { DesktopWork } from '../components/pages/DesktopWork';
 import { HeaderLayout } from '../components/templates/HeaderLayout';
+import { PocketLayout } from '../components/templates/PocketLayout';
+import { PocketMenu } from '../components/organisms/Pocket/PocketMenu';
 
 export const Router = () => {
   return (
@@ -37,6 +39,18 @@ export const Router = () => {
             <Stack minHeight="100vh">
               <WebWork />
             </Stack>
+          </HeaderLayout>
+        }
+      />
+      <Route
+        path="webwork/:pocketId"
+        element={
+          <HeaderLayout>
+            <PocketLayout>
+              <Stack minHeight="100vh">
+                <PocketMenu />
+              </Stack>
+            </PocketLayout>
           </HeaderLayout>
         }
       />
