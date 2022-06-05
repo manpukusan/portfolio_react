@@ -1,4 +1,4 @@
-import { Center, Wrap, WrapItem } from '@chakra-ui/react';
+import { Wrap, WrapItem } from '@chakra-ui/react';
 import { FC, memo, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { MenuCard } from '../../molecules/MedicalMenu/MenuCard';
@@ -35,21 +35,20 @@ export const PocketMenu: FC = memo(() => {
   }
 
   return (
-    <Center>
-      <Wrap
-        fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
-        p={{ base: 4, md: 10 }}
-      >
-        {menus.map((menu) => (
-          <WrapItem key={menu.id} mx="auto">
-            <MenuCard
-              title={menu.title}
-              effect={menu.effect}
-              imagePath={menu.imagePath}
-            />
-          </WrapItem>
-        ))}
-      </Wrap>
-    </Center>
+    <Wrap
+      fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
+      spacing={{ base: 4, md: 10 }}
+      justify="center"
+    >
+      {menus.map((menu) => (
+        <WrapItem key={menu.id} mx="auto">
+          <MenuCard
+            title={menu.title}
+            effect={menu.effect}
+            imagePath={menu.imagePath}
+          />
+        </WrapItem>
+      ))}
+    </Wrap>
   );
 });

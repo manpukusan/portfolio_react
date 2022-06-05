@@ -1,7 +1,7 @@
 import React, { memo, FC, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Flex, useDisclosure } from '@chakra-ui/react';
+import { HStack, useDisclosure } from '@chakra-ui/react';
 import { MenuButton } from '../../atoms/Button/MenuButton';
 import { MenuIconButton } from '../../atoms/Button/MenuIconButton';
 import { MenuDrawer } from '../../molecules/Layout/MenuDrawer';
@@ -17,7 +17,7 @@ export const Header: FC = memo(() => {
 
   return (
     <div>
-      <Flex
+      <HStack
         as="nav"
         bg="pink.500"
         color="gray.50"
@@ -25,12 +25,12 @@ export const Header: FC = memo(() => {
         justify="space-between"
         padding={{ base: 3, md: 5 }}
       >
+        <MenuIconButton onOpen={onOpen} />
         <MenuButton onClick={onClickHome}>Home</MenuButton>
         <MenuButton onClick={onClickAbout}>About</MenuButton>
         <MenuButton onClick={onClickWebWork}>WebWork</MenuButton>
         <MenuButton onClick={onClickDesktopWork}>DesktopWork</MenuButton>
-        <MenuIconButton onOpen={onOpen} />
-      </Flex>
+      </HStack>
       <MenuDrawer
         isOpen={isOpen}
         onClose={onClose}

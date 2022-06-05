@@ -15,6 +15,7 @@ export const MenuButton: FC<Props> = (props) => {
         bg="pink.500"
         color="white"
         _hover={{ bg: 'pink.400' }}
+        display={{ base: 'none', sm: 'block' }}
       >
         {children}
       </Button>

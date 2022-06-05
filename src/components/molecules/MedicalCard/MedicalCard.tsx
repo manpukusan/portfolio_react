@@ -19,8 +19,8 @@ export const MedicalCard: FC<Props> = memo((props) => {
   return (
     <Box
       as="section"
-      w="260px"
-      h="260px"
+      w={{ base: '250px', md: '300px' }}
+      h={{ base: '250px', md: '300px' }}
       bg="white"
       p={4}
       borderRadius="lg"
