@@ -1,5 +1,6 @@
 import React from 'react';
+import { ProfileHeader } from '../organisms/About/ProfileHeader';
 
 export const About = () => {
-  return <div>Aboutですー</div>;
+  return <ProfileHeader />;
 };
