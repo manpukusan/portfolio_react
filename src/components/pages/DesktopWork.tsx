@@ -1,32 +1,33 @@
-import { DownloadIcon, StarIcon } from '@chakra-ui/icons';
-import { List, ListIcon, ListItem, VStack } from '@chakra-ui/react';
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import { Heading, List, VStack } from '@chakra-ui/react';
 import React, { useCallback, useState } from 'react';
-// import ImageSort from '../../tools/ImageSort.zip';
+
+import { DesktopTools } from '../organisms/Desktop/DesktopTools';
 
 export const DesktopWork = () => {
   const [imageSort, setImageSort] = useState(false);
+  const [roukiTotal, setRoukiTotal] = useState(false);
 
   const onClickImageSort = useCallback(() => {
     setImageSort(!imageSort);
   }, [imageSort]);
+
+  const onClickRoukiTotal = useCallback(() => {
+    setRoukiTotal(!roukiTotal);
+  }, [roukiTotal]);
+
   return (
-    <VStack mt={8}>
-      <List spacing={3}>
-        <ListItem fontSize={{ base: 'md', md: 'xl', lg: '2xl', xl: '3xl' }}>
-          自動化ツール
-        </ListItem>
-        <ListItem onClick={onClickImageSort} _hover={{ cursor: 'pointer' }}>
-          <ListIcon as={StarIcon} color="green.500" />
-          画像ソートツール（納品画像ファイル処理）
-        </ListItem>
-        {imageSort && (
-          <ListItem>
-            <ListIcon as={DownloadIcon} color="green.500" />
-            <a href="./ImageSort.zip" download>
-              ダウンロード
-            </a>
-          </ListItem>
-        )}
+    <VStack mt={8} mx="auto">
+      <List spacing={{ base: 8, md: 12 }}>
+        <Heading fontSize={{ base: 'lg', md: 'xl', lg: '2xl', xl: '3xl' }}>
+          Pythonで自動化ツール
+        </Heading>
+        <DesktopTools
+          onClickImageSort={onClickImageSort}
+          onClickRoukiTotal={onClickRoukiTotal}
+          imageSort={imageSort}
+          roukiTotal={roukiTotal}
+        />
       </List>
     </VStack>
   );

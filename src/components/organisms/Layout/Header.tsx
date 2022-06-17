@@ -2,7 +2,7 @@ import React, { memo, FC, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { HStack, useDisclosure } from '@chakra-ui/react';
-import { MenuButton } from '../../atoms/Button/MenuButton';
+import { BaseButton } from '../../atoms/Button/BaseButton';
 import { MenuIconButton } from '../../atoms/Button/MenuIconButton';
 import { MenuDrawer } from '../../molecules/Layout/MenuDrawer';
 
@@ -26,10 +26,10 @@ export const Header: FC = memo(() => {
         padding={{ base: 3, md: 5 }}
       >
         <MenuIconButton onOpen={onOpen} />
-        <MenuButton onClick={onClickHome}>Home</MenuButton>
-        <MenuButton onClick={onClickAbout}>About</MenuButton>
-        <MenuButton onClick={onClickWebWork}>WebWork</MenuButton>
-        <MenuButton onClick={onClickDesktopWork}>DesktopWork</MenuButton>
+        <BaseButton onClick={onClickHome}>Home</BaseButton>
+        <BaseButton onClick={onClickAbout}>About</BaseButton>
+        <BaseButton onClick={onClickWebWork}>WebWork</BaseButton>
+        <BaseButton onClick={onClickDesktopWork}>DesktopWork</BaseButton>
       </HStack>
       <MenuDrawer
         isOpen={isOpen}
