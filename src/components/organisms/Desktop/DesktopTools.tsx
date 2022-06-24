@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { DownloadIcon, StarIcon } from '@chakra-ui/icons';
-import { HStack, List, ListIcon, ListItem } from '@chakra-ui/react';
+import { AddIcon, DownloadIcon, MinusIcon } from '@chakra-ui/icons';
+import { HStack, List, ListIcon, ListItem, Collapse } from '@chakra-ui/react';
 import React, { FC, memo } from 'react';
 
 import { BaseButtonGreen } from '../../atoms/Button/BaseButtonGreen';
@@ -8,12 +8,21 @@ import { BaseButtonGreen } from '../../atoms/Button/BaseButtonGreen';
 type Props = {
   onClickImageSort: () => void;
   onClickRoukiTotal: () => void;
+  onClickAnalyze: () => void;
   imageSort: boolean;
   roukiTotal: boolean;
+  analyze: boolean;
 };
 
 export const DesktopTools: FC<Props> = memo((props) => {
-  const { onClickImageSort, onClickRoukiTotal, imageSort, roukiTotal } = props;
+  const {
+    onClickImageSort,
+    onClickRoukiTotal,
+    onClickAnalyze,
+    imageSort,
+    roukiTotal,
+    analyze,
+  } = props;
 
   const onClickDownload = (fileName: string) => {
     console.log('onClickDownload');
@@ -35,15 +44,15 @@ export const DesktopTools: FC<Props> = memo((props) => {
           borderBottom="1px solid #0078D7"
           fontSize={{ base: 'sm', md: 'md', lg: 'lg', xl: 'xl' }}
         >
-          <ListIcon as={StarIcon} color="green.500" />
+          <ListIcon as={imageSort ? MinusIcon : AddIcon} color="green.500" />
           画像ソートツール
           <br />
           （納品画像ファイル処理）
         </ListItem>
       </List>
-      {imageSort && (
+      <Collapse in={imageSort}>
         <List
-          w={{ base: '300px', md: '500px', lg: '600px' }}
+          w={{ base: '300px', md: '350px', lg: '400px' }}
           fontSize={{ base: 'sm', md: 'md', lg: 'lg', xl: 'xl' }}
         >
           <ListItem>
@@ -59,7 +68,7 @@ export const DesktopTools: FC<Props> = memo((props) => {
             </HStack>
           </ListItem>
         </List>
-      )}
+      </Collapse>
       <List>
         <ListItem
           onClick={onClickRoukiTotal}
@@ -67,15 +76,15 @@ export const DesktopTools: FC<Props> = memo((props) => {
           borderBottom="1px solid #0078D7"
           fontSize={{ base: 'sm', md: 'md', lg: 'lg', xl: 'xl' }}
         >
-          <ListIcon as={StarIcon} color="green.500" />
+          <ListIcon as={roukiTotal ? MinusIcon : AddIcon} color="green.500" />
           労基署集計ツール
           <br />
           （労働基準局へ提出する健診結果集計ツール）
         </ListItem>
       </List>
-      {roukiTotal && (
+      <Collapse in={roukiTotal}>
         <List
-          w={{ base: '300px', md: '500px', lg: '600px' }}
+          w={{ base: '300px', md: '350px', lg: '400px' }}
           fontSize={{ base: 'sm', md: 'md', lg: 'lg', xl: 'xl' }}
         >
           <ListItem>
@@ -94,7 +103,35 @@ export const DesktopTools: FC<Props> = memo((props) => {
             </HStack>
           </ListItem>
         </List>
-      )}
+      </Collapse>
+      <List>
+        <ListItem
+          onClick={onClickAnalyze}
+          _hover={{ cursor: 'pointer' }}
+          borderBottom="1px solid #0078D7"
+          fontSize={{ base: 'sm', md: 'md', lg: 'lg', xl: 'xl' }}
+        >
+          <ListIcon as={analyze ? MinusIcon : AddIcon} color="green.500" />
+          健診結果分析ツール
+        </ListItem>
+      </List>
+      <Collapse in={analyze} animateOpacity>
+        <List
+          w={{ base: '300px', md: '350px', lg: '400px' }}
+          fontSize={{ base: 'sm', md: 'md', lg: 'lg', xl: 'xl' }}
+        >
+          <ListItem>健診結果からデータ内の所見率をかし</ListItem>
+          <ListItem>
+            <br />
+            <HStack>
+              <ListIcon as={DownloadIcon} color="green.500" />
+              <BaseButtonGreen onClick={() => onClickDownload('ImageSort.zip')}>
+                ImageSort
+              </BaseButtonGreen>
+            </HStack>
+          </ListItem>
+        </List>
+      </Collapse>
     </>
   );
 });
