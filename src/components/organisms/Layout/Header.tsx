@@ -24,6 +24,7 @@ export const Header: FC = memo(() => {
         align="center"
         justify="space-between"
         padding={{ base: 3, md: 5 }}
+        minHeight="15Vh"
       >
         <MenuIconButton onOpen={onOpen} />
         <BaseButton onClick={onClickHome}>Home</BaseButton>

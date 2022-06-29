@@ -23,7 +23,7 @@ export const DesktopWork = () => {
 
   return (
     <VStack mt={8} mx="auto">
-      <List spacing={{ base: 8, md: 12, lg: 16, xl: 20 }}>
+      <List spacing={{ base: 4, md: 8, lg: 12, xl: 16 }}>
         <Heading fontSize={{ base: 'lg', md: 'xl', lg: '2xl', xl: '3xl' }}>
           Pythonで自動化ツール
         </Heading>

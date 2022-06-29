@@ -3,7 +3,7 @@ import { FC, memo } from 'react';
 
 export const PocketHeader: FC = memo(() => {
   return (
-    <VStack fontSize={{ base: 'md', md: 'xl', lg: '2xl', xl: '3xl' }}>
+    <VStack fontSize={{ base: 'xl', md: '2xl', lg: '3xl', xl: '4xl' }}>
       <Heading as="h1" textAlign="center" mt={8}>
         ポケット食堂
       </Heading>

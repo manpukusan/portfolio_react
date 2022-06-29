@@ -23,7 +23,7 @@ export const ProfileHeader = memo(() => {
           <FormLabel htmlFor="name">Name</FormLabel>
           <Input
             id="name"
-            value="齊藤  多世"
+            value="齊藤"
             isReadOnly
             fontSize={{ base: 'md', md: 'xl', lg: '2xl', xl: '3xl' }}
           />
@@ -32,7 +32,7 @@ export const ProfileHeader = memo(() => {
           <FormLabel htmlFor="kana">Kana</FormLabel>
           <Input
             id="kana"
-            value="Saito Tayo"
+            value="Saito"
             isReadOnly
             fontSize={{ base: 'sm', md: 'md', lg: 'lg', xl: 'xl' }}
           />
