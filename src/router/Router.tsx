@@ -23,6 +23,16 @@ export const Router = () => {
         }
       />
       <Route
+        path="portfolio_react"
+        element={
+          <HeaderLayout>
+            <Stack minHeight="100vh">
+              <Home />
+            </Stack>
+          </HeaderLayout>
+        }
+      />
+      <Route
         path="about"
         element={
           <HeaderLayout>
