@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div className="App">
       <ChakraProvider theme={theme}>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <BrowserRouter basename="https://manpukusan.github.io/portfolio_react">
           <Router />
         </BrowserRouter>
       </ChakraProvider>
