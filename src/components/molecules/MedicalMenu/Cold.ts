@@ -1,23 +1,20 @@
 export const cold = [
   {
-    id: 1,
     title: '★ショウガとナツメの参鶏湯★',
     effect:
       '内臓冷えてませんか？腸を元気にして体温をUPさせて身体の芯から温めていきましょう！強力に身体を温めてくれるショウガと、精神的な安定作用のあるナツメでリラックスして冷え性を退治しましょう。',
-    imagePath: './public/images/cold/cold001.png',
+    imageName: 'cold001',
   },
   {
-    id: 1,
     title: '★ホットなでもほっとするスパイスカレー★',
     effect:
       'スパイスは、血の巡りを良くして、身体をホットにしてくれるだけでなく、ほっとリラックスできる効果もあります。スパイスの力でホットな身体にしましょう。',
-    imagePath: './public/images/cold/cold002.png',
+    imageName: 'cold002',
   },
   {
-    id: 1,
     title: 'ネバネバでサラサラ血液丼',
     effect:
       'なかなか良くならない冷え性。もしかしてドロドロ血液が原因かもしれません！青魚とネバネバ食材プラスクエン酸のトリプルパワーで、サラサラ血液にしていきましょう',
-    imagePath: './public/images/cold/cold003.png',
+    imageName: 'cold003',
   },
 ];

@@ -1,7 +1,5 @@
-// import React from 'react';
-// import './App.css';
 import { ChakraProvider } from '@chakra-ui/react';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { Router } from './router/Router';
 import theme from './theme/theme';
 
@@ -9,9 +7,9 @@ const App = () => {
   return (
     <div className="App">
       <ChakraProvider theme={theme}>
-        <HashRouter>
+        <BrowserRouter>
           <Router />
-        </HashRouter>
+        </BrowserRouter>
       </ChakraProvider>
     </div>
   );

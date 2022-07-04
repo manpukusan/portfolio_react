@@ -10,11 +10,22 @@ export const Footer: FC = memo(() => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const navigate = useNavigate();
 
-  const onClickHome = useCallback(() => navigate('/'), []);
-  const onClickAbout = useCallback(() => navigate('/about'), []);
-  const onClickWebWork = useCallback(() => navigate('/webwork'), []);
-  const onClickDesktopWork = useCallback(() => navigate('/desktopwork'), []);
-
+  const onClickHome = useCallback(() => {
+    navigate('/');
+    onClose();
+  }, []);
+  const onClickAbout = useCallback(() => {
+    navigate('/about');
+    onClose();
+  }, []);
+  const onClickWebWork = useCallback(() => {
+    navigate('/webwork');
+    onClose();
+  }, []);
+  const onClickDesktopWork = useCallback(() => {
+    navigate('/desktopwork');
+    onClose();
+  }, []);
   return (
     <>
       <VStack

@@ -8,10 +8,9 @@ import { headache } from '../../molecules/MedicalMenu/Headache';
 import { eyestrain } from '../../molecules/MedicalMenu/Eyestrain';
 
 type Menus = {
-  id: number;
   title: string;
   effect: string;
-  imagePath: string;
+  imageName: string;
 };
 
 export const PocketMenu: FC = memo(() => {
@@ -41,11 +40,11 @@ export const PocketMenu: FC = memo(() => {
       justify="center"
     >
       {menus.map((menu) => (
-        <WrapItem key={menu.id} mx="auto">
+        <WrapItem key={menu.imageName} mx="auto">
           <MenuCard
             title={menu.title}
             effect={menu.effect}
-            imagePath={menu.imagePath}
+            imageName={menu.imageName}
           />
         </WrapItem>
       ))}

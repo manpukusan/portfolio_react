@@ -1,20 +1,24 @@
-import { Box, Center, Stack, Text } from '@chakra-ui/react';
+import { Box, Center, Image, Stack, Text } from '@chakra-ui/react';
 import React, { FC, memo } from 'react';
+
+import { useImagePath } from '../../../hooks/useImagePath';
 
 type Props = {
   title: string;
   effect: string;
-  imagePath: string;
+  imageName: string;
 };
 
 export const MenuCard: FC<Props> = memo((props) => {
-  const { title, effect } = props;
+  const { title, effect, imageName } = props;
+  const { imagePath } = useImagePath(imageName);
+
   return (
     <Center>
       <Box
         as="section"
-        w={{ base: '300px', md: '400px' }}
-        h={{ base: '300px', md: '400px' }}
+        w={{ base: '400px', md: '500px' }}
+        h={{ base: '500px', md: '500px' }}
         bg="white"
         p={4}
         borderRadius="lg"
@@ -34,6 +38,7 @@ export const MenuCard: FC<Props> = memo((props) => {
           <Text as="p" fontSize={{ base: 'sm', md: 'md' }}>
             {effect}
           </Text>
+          <Image src={imagePath} alt={title} />
         </Stack>
       </Box>
     </Center>
