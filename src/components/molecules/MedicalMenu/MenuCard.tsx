@@ -17,8 +17,8 @@ export const MenuCard: FC<Props> = memo((props) => {
     <Center>
       <Box
         as="section"
-        w={{ base: '400px', md: '500px' }}
-        h={{ base: '500px', md: '500px' }}
+        w={{ base: '450px', md: '550px' }}
+        h={{ base: '450px', md: '550px' }}
         bg="white"
         p={4}
         borderRadius="lg"

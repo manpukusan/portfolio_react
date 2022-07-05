@@ -27,7 +27,7 @@ export const DesktopTools: FC<Props> = memo((props) => {
   const onClickDownload = (fileName: string) => {
     console.log('onClickDownload');
     const link = document.createElement('a');
-    link.href = `/tools/${fileName}`;
+    link.href = `./tools/${fileName}`;
     link.innerText = 'aダウンロード';
     link.download = fileName;
     document.body.appendChild(link);
