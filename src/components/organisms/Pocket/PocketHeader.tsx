@@ -13,7 +13,7 @@ export const PocketHeader: FC = memo(() => {
       <Text
         as="p"
         textAlign="center"
-        fontSize={{ base: 'sm', md: 'md', lg: 'xl', xl: '2xl' }}
+        fontSize={{ base: 'md', md: 'lg', lg: 'xl', xl: '2xl' }}
       >
         ポケット食堂では、みなさんのお悩みにぴったり合ったメニューをご提案いたします
       </Text>

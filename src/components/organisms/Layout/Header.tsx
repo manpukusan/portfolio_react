@@ -2,7 +2,7 @@ import React, { memo, FC, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { HStack, useDisclosure } from '@chakra-ui/react';
-import { BaseButton } from '../../atoms/Button/BaseButton';
+import { BaseButtonResponsive } from '../../atoms/Button/BaseButtonResponsive';
 import { MenuIconButton } from '../../atoms/Button/MenuIconButton';
 import { MenuDrawer } from '../../molecules/Layout/MenuDrawer';
 
@@ -38,10 +38,16 @@ export const Header: FC = memo(() => {
         minHeight="15Vh"
       >
         <MenuIconButton onOpen={onOpen} />
-        <BaseButton onClick={onClickHome}>Home</BaseButton>
-        <BaseButton onClick={onClickAbout}>About</BaseButton>
-        <BaseButton onClick={onClickWebWork}>WebWork</BaseButton>
-        <BaseButton onClick={onClickDesktopWork}>DesktopWork</BaseButton>
+        <BaseButtonResponsive onClick={onClickHome}>Home</BaseButtonResponsive>
+        <BaseButtonResponsive onClick={onClickAbout}>
+          About
+        </BaseButtonResponsive>
+        <BaseButtonResponsive onClick={onClickWebWork}>
+          WebWork
+        </BaseButtonResponsive>
+        <BaseButtonResponsive onClick={onClickDesktopWork}>
+          DesktopWork
+        </BaseButtonResponsive>
       </HStack>
       <MenuDrawer
         isOpen={isOpen}

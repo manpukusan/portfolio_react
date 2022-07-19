@@ -6,7 +6,7 @@ type Props = {
   onClick: () => void;
 };
 
-export const BaseButton: FC<Props> = (props) => {
+export const BaseButtonResponsive: FC<Props> = (props) => {
   const { children, onClick } = props;
   return (
     <div>
@@ -15,6 +15,7 @@ export const BaseButton: FC<Props> = (props) => {
         bg="pink.500"
         color="white"
         _hover={{ bg: 'pink.400' }}
+        display={{ base: 'none', sm: 'block' }}
       >
         {children}
       </Button>
