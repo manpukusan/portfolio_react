@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div className="App">
       <ChakraProvider theme={theme}>
-        <BrowserRouter basename="/">
+        <BrowserRouter basename="/portfolio_react">
           <Router />
         </BrowserRouter>
       </ChakraProvider>
